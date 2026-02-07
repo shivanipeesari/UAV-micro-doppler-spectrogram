@@ -62,6 +62,12 @@ class UAVBirdClassificationSystem:
             config (dict): Configuration parameters
         """
         self.config = config or self._get_default_config()
+        
+        # Normalize image_size to tuple format
+        if isinstance(self.config.get('image_size'), int):
+            size = self.config['image_size']
+            self.config['image_size'] = (size, size)
+        
         self.dataset_loader = None
         self.model = None
         self.trainer = None

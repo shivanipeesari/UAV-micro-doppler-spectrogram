@@ -30,16 +30,20 @@ class DatasetLoader:
     - Organizing labels and file paths
     """
     
-    def __init__(self, dataset_path, image_size=(128, 128)):
+    def __init__(self, dataset_path, image_size=128):
         """
         Initialize the DatasetLoader.
         
         Args:
             dataset_path (str): Path to the dataset root directory
-            image_size (tuple): Target image size (height, width) for resizing
+            image_size (int or tuple): Target image size. If int, will create square image
         """
         self.dataset_path = Path(dataset_path)
-        self.image_size = image_size
+        # Handle image_size - convert to tuple if needed
+        if isinstance(image_size, int):
+            self.image_size = (image_size, image_size)
+        else:
+            self.image_size = image_size
         self.classes = ['UAV', 'Bird']  # Binary classification
         self.images = []
         self.labels = []
@@ -93,8 +97,8 @@ class DatasetLoader:
                         logger.warning(f"Failed to load image: {image_path}")
                         continue
                     
-                    # Resize image to target size
-                    image_resized = cv2.resize(image, self.image_size)
+                    # Resize image to target size - cv2.resize expects (width, height)
+                    image_resized = cv2.resize(image, (self.image_size[1], self.image_size[0]))
                     
                     # Normalize image to [0, 1] range
                     image_normalized = image_resized.astype(np.float32) / 255.0

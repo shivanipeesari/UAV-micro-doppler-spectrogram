@@ -35,10 +35,14 @@ class ImagePreprocessor:
         Initialize the ImagePreprocessor.
         
         Args:
-            target_size (tuple): Target image size (height, width)
+            target_size (tuple or int): Target image size (height, width) or int for square
         """
-        self.target_size = target_size
-        logger.info(f"Initialized ImagePreprocessor with target size: {target_size}")
+        # Handle both int and tuple formats
+        if isinstance(target_size, int):
+            self.target_size = (target_size, target_size)
+        else:
+            self.target_size = target_size
+        logger.info(f"Initialized ImagePreprocessor with target size: {self.target_size}")
     
     def resize_image(self, image, target_size=None):
         """

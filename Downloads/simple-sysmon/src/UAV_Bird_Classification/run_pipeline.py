@@ -92,7 +92,10 @@ def main():
         'learning_rate': 0.001,
         'augment_data': True,
         'augment_factor': 2,
-        'verbose': True
+        'verbose': True,
+        'model_save_path': './model/trained_model.h5',
+        'db_path': './database/predictions.db',
+        'reports_dir': './reports'
     }
     
     try:
