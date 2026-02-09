@@ -2,18 +2,29 @@
 
 ## Project Overview
 
-This is a comprehensive Deep Learning-based Classification System for distinguishing between **Unmanned Aerial Vehicles (UAVs)** and **Birds** using radar micro-Doppler signatures. The system analyzes time-frequency spectrograms generated from radar signals using Short-Time Fourier Transform (STFT) and employs a Convolutional Neural Network (CNN) for binary classification.
+This is a **professional-grade major project** for distinguishing between **Unmanned Aerial Vehicles (UAVs)** and **Birds** using Deep Learning and radar signal analysis. The system processes radar micro-Doppler signatures, generates spectrograms via STFT, and employs a CNN for precise binary classification.
 
-### Key Features
+### 🎯 Major Project Highlights
 
-- **Dataset**: Uses the DIAT-μSAT (Small Aerial Targets' Micro-Doppler Signatures) dataset
-- **Preprocessing**: Automatic image resizing, normalization, noise reduction, and contrast enhancement
-- **Spectrogram Generation**: STFT-based analysis with synthetic signal support
-- **CNN Architecture**: Simple, interpretable model suitable for academic projects
-- **Training Pipeline**: Includes data augmentation, early stopping, and learning rate scheduling
-- **Evaluation Metrics**: Accuracy, Precision, Recall, F1-score, ROC-AUC, and Confusion Matrix
-- **Database Storage**: SQLite-based prediction storage with export to CSV/Excel
-- **Comprehensive Reporting**: Training history, evaluation metrics, and prediction reports
+#### Core Features
+- **Advanced Signal Processing**: STFT-based spectrogram generation with signal preprocessing
+- **Custom CNN Architecture**: Optimized for micro-Doppler signature classification (~361K parameters)
+- **Comprehensive Dataset Handling**: 60+ labeled spectrograms (UAV & Bird), automatic loading and validation
+- **Professional Training Pipeline**: Data augmentation, early stopping, learning rate scheduling
+- **Robust Evaluation**: Accuracy, Precision, Recall, F1-score, ROC-AUC, Confusion Matrix
+
+#### Interactive Visualization & Demonstration
+- **Input-Output Visualization**: See input spectrograms alongside model predictions
+- **Interactive Demo System**: Real-time analysis with visual feedback
+- **Batch Processing**: Analyze multiple samples with grid visualization
+- **Spectrogram Comparison**: Side-by-side pattern comparison (UAV vs Bird)
+- **Prediction Dashboard**: Comprehensive analysis with confidence metrics
+
+#### Production-Ready Components
+- **SQLite Database**: Persistent prediction storage with full query support
+- **Report Generation**: CSV/Excel/TXT exports for analysis and documentation
+- **Cross-Platform Support**: Works on Windows, macOS, and Linux
+- **Error Handling**: Robust exception management and logging throughout
 
 ---
 
@@ -136,7 +147,35 @@ UAV_Bird_Classification/
 
 ---
 
+## Quick Start - Interactive Demo
+
+### Experience the System Visually
+
+```bash
+# Run the interactive demonstration
+python interactive_demo.py
+```
+
+**What you'll see:**
+- **Single Prediction**: Input spectrogram → Real-time analysis → Output display
+- **Batch Analysis**: Process multiple samples with grid visualization
+- **Spectrogram Comparison**: See UAV vs Bird pattern differences side-by-side
+- **Prediction Dashboard**: Comprehensive analysis with confidence metrics
+- **System Information**: Complete architecture and performance details
+
+### Key Demonstrations
+
+| Demo | Shows | Use Case |
+|------|-------|----------|
+| Single Prediction | Input image → Output classification | Understand model decision |
+| Batch Analysis | Multiple predictions in grid | Evaluate consistency |
+| Comparison | UAV vs Bird patterns | Learn distinguishing features |
+| Dashboard | Full analysis with metrics | Professional presentation |
+
+---
+
 ## Usage
+
 
 ### 1. Complete Pipeline (Training + Evaluation)
 
