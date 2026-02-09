@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 def check_dependencies():
-    """Check if all required packages are installed"""
+    """Check if all required packages are installed (cross-platform)"""
     required = ['tensorflow', 'numpy', 'cv2', 'sklearn', 'pandas', 'matplotlib']
     missing = []
     
@@ -28,12 +28,13 @@ def check_dependencies():
         print("❌ Missing packages:", ', '.join(missing))
         print("\n📦 Install with:")
         print("   pip install -r requirements.txt")
+        print("   (or: python -m pip install -r requirements.txt)")
         return False
     
     return True
 
 def check_dataset():
-    """Check if dataset exists"""
+    """Check if dataset exists (cross-platform)"""
     uav_dir = Path('dataset/UAV')
     bird_dir = Path('dataset/Bird')
     
@@ -43,7 +44,7 @@ def check_dataset():
     if len(uav_images) == 0 or len(bird_images) == 0:
         print("❌ Dataset not found or empty!")
         print("\n📊 Options:")
-        print("   1. Generate synthetic data: python3 generate_data.py")
+        print("   1. Generate synthetic data: python generate_data.py")
         print("   2. Add real images to:")
         print(f"      - {uav_dir.absolute()}")
         print(f"      - {bird_dir.absolute()}")
